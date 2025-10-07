@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #10b981;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium bg-emerald-100 text-emerald-700;
+}
+.card {
+  @apply rounded-xl bg-white shadow-card p-4;
+}
+.btn {
+  @apply inline-flex items-center gap-2 rounded-lg bg-emerald-600 text-white px-3 py-2 hover:bg-emerald-700 active:bg-emerald-800 disabled:opacity-50;
+}
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-zinc-100;
+}
+.input {
+  @apply rounded-lg border border-zinc-300 px-3 py-2 w-full;
+}
+.select {
+  @apply rounded-lg border border-zinc-300 px-3 py-2 w-full bg-white;
+}
+.table {
+  @apply w-full text-sm;
+}
+.table th, .table td {
+  @apply px-3 py-2 text-left border-b border-zinc-200;
+}
+/* Drawer */
+.drawer {
+  @apply fixed top-0 right-0 h-screen w-[380px] max-w-[90vw] bg-white shadow-2xl border-l border-zinc-200 p-4 overflow-y-auto;
+}
+.drawer-header { @apply flex items-center justify-between mb-2; }
+.drawer-title { @apply text-lg font-semibold; }
+.drawer-body { @apply space-y-3; }
