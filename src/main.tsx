@@ -17,8 +17,8 @@ const router = createBrowserRouter([
   }
 ]);
 
-// Register SW (PWA, offline by default)
-if ("serviceWorker" in navigator) {
+// Register service worker for PWA functionality in production
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("/service-worker.js").catch(() => {});
   });

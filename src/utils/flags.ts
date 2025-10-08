@@ -1,7 +1,8 @@
 import type { FeatureFlags } from "@/types";
 
-export const flags: FeatureFlags = {
-  openCriticEnabled: false,
-  igdbEnabled: false,
-  steamPriceFetchEnabled: false,
-};
+export const flags = {
+  openCriticEnabled: true,
+  igdbEnabled: true,
+  steamPriceFetchEnabled: true,   // <— NEW (optional)
+  steamImportEnabled: true,       // <— NEW (off by default)
+} as const;

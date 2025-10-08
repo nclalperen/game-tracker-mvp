@@ -24,6 +24,7 @@ export interface Identity {
 }
 
 export interface LibraryItem {
+  title: string;
   id: string;
   identityId: string;
   accountId?: string;
