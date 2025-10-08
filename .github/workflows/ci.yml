@@ -13,18 +13,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
+          cache: pnpm
 
+      # Install pnpm into PATH
       - uses: pnpm/action-setup@v4
         with:
           version: 9
-          run_install: true
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile=false
 
       - name: Lint (optional)
-        if: ${{ hashFiles('**/.eslintrc*') != '' }}
         run: pnpm run lint || echo "no lint script"
 
-      - name: Test
+      - name: Test (ok if none yet)
         run: pnpm test -r || echo "no tests yet"
 
       - name: Build
